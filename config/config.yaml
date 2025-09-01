@@ -1,0 +1,17 @@
+log:
+  # 设置控制台输出的格式，时间、版本、名称，级别，,模块标签，消息（带颜色）
+  log_format: "<green>{time:YY-MM-DD HH:mm:ss}</green> | <yellow> version: {extra[version]}</yellow> | <level>{level: <3}</level> | <cyan>{name}</cyan> | <light-blue>{extra[tag]}</light-blue> | <light-green>{message}</light-green>"
+  # 设置日志文件输出的格式，时间、版本、名称，级别，,模块标签，消息
+  log_format_file: "{time:YYYY-MM-DD HH:mm:ss} - {extra[version]} - {name} - {level} - {extra[tag]} - {message}"
+  
+  version: "0.1"  # 系统的版本要一起输出，直接在config.yaml中设置
+  # 设置日志等级：INFO、DEBUG
+  log_level: DEBUG
+  # 设置日志路径
+  log_dir: ./tmp/log
+  # 设置日志文件
+  log_file: "server.log"
+  # 日志轮转
+  rotation: "10 MB"
+  retention: "30 days"
+  compression: "gz"

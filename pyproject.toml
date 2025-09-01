@@ -1,0 +1,33 @@
+[project]
+name = "pythontemplate"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "loguru>=0.7.3",
+    "pre-commit>=4.3.0",
+    "pydantic>=2.11.7",
+    "pyyaml>=6.0.2",
+    "ruff>=0.12.11",
+]
+
+[tool.ruff]
+line-length = 88
+lint.select = [
+    "E",   # pycodestyle（比如 E501 行过长）
+    "W",   # pycodestyle warnings（比如 W293 空白行含空格）
+    "F",   # pyflakes（未使用变量等）
+    "B",   # bugbear（潜在 bug）
+    "UP",  # pyupgrade（自动升级语法）
+    "I",   # isort（导入顺序）
+    "RUF", # Ruff 自己的规则（比如 Unicode 混淆检查）
+
+]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+]
